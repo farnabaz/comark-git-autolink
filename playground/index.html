@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GitHub auto-link</title>
+    <link rel="stylesheet" href="./style.css">
+  </head>
+  <body>
+    <header class="bar">
+      <div class="identity">
+        <h1>GitHub auto-link</h1>
+        <p>Type a reference and see which ones become links.</p>
+      </div>
+      <div class="fields">
+        <label class="field">
+          <span>Repository</span>
+          <input id="repository" name="repository" autocomplete="off" spellcheck="false" aria-describedby="repository-hint">
+          <span id="repository-hint" class="hint">Used for #32, GH-32, and bare commit SHAs.</span>
+        </label>
+        <label class="field">
+          <span>Base URL</span>
+          <input id="base-url" name="baseUrl" autocomplete="off" spellcheck="false" inputmode="url">
+        </label>
+      </div>
+    </header>
+
+    <p id="notice" class="notice" role="status"></p>
+
+    <fieldset class="types">
+      <legend>Reference types</legend>
+      <label><input type="checkbox" name="issues" checked> Issues <code>#32</code></label>
+      <label><input type="checkbox" name="repositories" checked> Repositories <code>owner/repo</code></label>
+      <label><input type="checkbox" name="mentions" checked> Mentions <code>@user</code></label>
+      <label><input type="checkbox" name="commits" checked> Commits <code>abc1234</code></label>
+      <label><input type="checkbox" name="compares" checked> Compares <code>sha...sha</code></label>
+    </fieldset>
+
+    <main>
+      <section class="pane" aria-labelledby="source-heading">
+        <div class="pane-head">
+          <h2 id="source-heading">Source</h2>
+          <button type="button" id="restore">Restore sample</button>
+        </div>
+        <textarea id="source" spellcheck="false" aria-label="Markdown source"></textarea>
+      </section>
+
+      <section class="pane pane-result" aria-labelledby="preview-heading">
+        <div class="pane-head">
+          <h2 id="preview-heading">Rendered</h2>
+        </div>
+        <div id="preview" class="preview"></div>
+        <div class="link-list">
+          <h2 id="links-heading">Links</h2>
+          <ol id="links" class="links" aria-labelledby="links-heading"></ol>
+        </div>
+      </section>
+    </main>
+
+    <script type="module" src="./main.ts"></script>
+  </body>
+</html>
