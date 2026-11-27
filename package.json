@@ -1,6 +1,6 @@
 {
   "name": "comark-git-autolink",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A Comark plugin that turns git forge references such as #32, @user and commit SHAs into links. Works with GitHub and GitHub-compatible hosts.",
   "keywords": [
     "comark",
