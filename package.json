@@ -9,7 +9,8 @@
     "plugin",
     "git",
     "github",
-    "autolink"
+    "autolink",
+    "gitlab"
   ],
   "homepage": "https://github.com/farnabaz/comark-git-autolink#readme",
   "bugs": {
